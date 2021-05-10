@@ -1,5 +1,3 @@
-
-# 
 variable "AWS_REGION" {
   default = "sa-east-1"
 }

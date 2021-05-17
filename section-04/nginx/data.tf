@@ -1,5 +1,5 @@
 
-data "aws_ami" "ubuntu" {x
+data "aws_ami" "ubuntu" {
   most_recent = true
 
   filter {
@@ -15,10 +15,9 @@ data "aws_ami" "ubuntu" {x
   owners = var.AMI_OWNERS # Canonical
 }
 
-data "aws_security_group" "ssh" {
-  id = var.SG_SSH
-}
-
 data "aws_subnet" "main-public-1" {
   id = var.PUB_SUBNET_1
 }
+
+
+data "aws_availability_zones" "available" {}

@@ -11,9 +11,9 @@ variable "PUB_SUBNET_1" {
   default = "subnet-0301e4e51298985be"
 }
 
-variable "SG_SSH" {
-  type    = string
-  default = "sg-08ecbe0692fbe25ec"
+variable "SG_SSH_WEB" {
+  type    = list(string)
+  default = ["sg-08ecbe0692fbe25ec", "sg-046381c78e6f224c2"]
 }
 
 variable "AMI_OWNERS" {
@@ -21,9 +21,7 @@ variable "AMI_OWNERS" {
   default = ["099720109477"]
 }
 
-#variable "AMIS" {
-#  type = map(any)
-#  default = {
-#    us-east-1 = "ami_id"
-#  }
-#}
+
+variable "EC2_INST_USER_NAME" {
+  default = "ubuntu"
+}

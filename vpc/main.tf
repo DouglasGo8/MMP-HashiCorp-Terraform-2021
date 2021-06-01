@@ -214,7 +214,7 @@ resource "aws_security_group" "security-group-1" {
 
   tags = {
     Name = "security-group-1"
-  }
+  }true
 }
 
 #########################################

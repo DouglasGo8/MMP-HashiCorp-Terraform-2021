@@ -9,7 +9,7 @@ resource "aws_instance" "nginx-inst-ec2" {
   vpc_security_group_ids = var.SG_SSH_WEB
   key_name               = aws_key_pair.key.key_name
   subnet_id              = data.aws_subnet.main-public-1.id
-  availability_zone = data.aws_availability_zones.available.names[0]
+  availability_zone      = data.aws_availability_zones.available.names[0]
   tags = {
     Name = "EC2_NGINX_INST"
   }
@@ -19,9 +19,9 @@ resource "aws_instance" "nginx-inst-ec2" {
     destination = "/tmp/installNginx.sh"
   }
 
-  #provisioner "local-exec" {
+  # provisioner "local-exec" {
   #  command = "echo aws_instance.nginx-inst-ec2.private_ip >> priv_ips.dat"
-  #}
+  # }
 
   provisioner "remote-exec" {
     inline = [

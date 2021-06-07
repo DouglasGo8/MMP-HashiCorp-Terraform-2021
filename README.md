@@ -53,3 +53,7 @@ root@ip-1:~# mkfs.ext4 /dev/xvdh
 root@ip-1:~# mkdir -p /data
 root@ip-1:~# mount /dev/xvdh /data
 ```
+
+## Modules
+
+- [Registry Terraform](https://registry.terraform.io)

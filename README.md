@@ -57,3 +57,20 @@ root@ip-1:~# mount /dev/xvdh /data
 ## Modules
 
 - [Registry Terraform](https://registry.terraform.io)
+
+## Conditions
+
+- Equality == !=
+- Numeric Comparison >,<, >=, <=
+- &&, ||, !
+
+## Terraform Production Projects
+
+- Good Project structure is must have
+- Code Modules are necessary in Production Projects
+- Ideally there should be separate env for dev/hml/prod
+
+## Packer
+
+- Is Open source tool for creating **identical machine images** for multiple platforms
+- Packer combines Pref Configured Image + Configurations and OS with packages which needs to be installer

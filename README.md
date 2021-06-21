@@ -74,3 +74,41 @@ root@ip-1:~# mount /dev/xvdh /data
 
 - Is Open source tool for creating **identical machine images** for multiple platforms
 - Packer combines Pref Configured Image + Configurations and OS with packages which needs to be installer
+
+## AWS EKS
+
+- EKS by AWS CLI
+
+- **curl -o aws-auth-cm.yaml**
+
+```yaml
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: aws-auth
+  namespace: kube-system
+data:
+  mapRoles:
+    - rolearn: <ARN of instance role>
+    username: system:node:{{EC2PrivateDSNName}}
+    groups:
+      - system:bootstrappers
+      - system:nodes
+```
+
+- Pre-requisites
+  > AWSCLI
+  > Install kubectl
+  > Install aws-iam-authenticator
+  > Create Role (for accessing EKS cluster create a role with AmazonEKSClusterPolicy and AmazonEKSServicePolicy policies)
+  > Create VPC
+
+```shell
+aws --version
+curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
+unzip awscliv2.zip
+sudo ./aws/install
+aws --version
+```
+
+- Further commands see section 12 - Lecture 79

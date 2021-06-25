@@ -2,6 +2,10 @@
 
 ---
 
+```shell
+ssh -i {{pem}} ubuntu@{{PUBLIC_IP}}
+```
+
 ```terraform
 provider "aws" {
   access_key = ${var.AWS_ACCESS_KEY}

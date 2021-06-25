@@ -97,13 +97,13 @@ resource "aws_internet_gateway" "internet-gateway-1" {
 # Elastic IP for Nat Gateway ** Spensive Resource ** #
 ######################################################
 
-/*resource "aws_eip" "nat_eip" {
+resource "aws_eip" "nat_eip" {
   vpc        = true
   depends_on = [aws_internet_gateway.internet-gateway-1]
   tags = {
     Name = "${var.PROJECT_NAME}-vpc-nat-elastic-ip"
   }
-}*/
+}
 
 resource "aws_nat_gateway" "nat-gateway-1" {
   allocation_id = aws_eip.nat_eip.id

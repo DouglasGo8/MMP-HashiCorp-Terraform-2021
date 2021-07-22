@@ -2,6 +2,11 @@
 
 ---
 
+- IaC (Infrastructure as Code) is the process of managing and provisioning computer data centers, manage your IT infrastructure using configuration files
+- IaC Benefits - Speed, Consistency
+- local-exec provisioner is used to run CLI for your target system in order to create, update or interact with remote objects in that system
+- remote-exec provisioner invokes a script on a remote resource after it is created ![remote-exec](assets/img/remote_exec.png)
+
 ```shell
 ssh -i {{pem}} ubuntu@{{PUBLIC_IP}}
 ```
